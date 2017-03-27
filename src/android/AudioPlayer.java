@@ -309,7 +309,7 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
      * Seek or jump to a new time in the track.
      */
     public void seekToPlaying(int milliseconds) {
-        if (this.readyPlayer(this.audioFile)) {
+        if (this.state != STATE.MEDIA_NONE) {
             if (milliseconds > 0) {
                 this.player.seekTo(milliseconds);
             }
